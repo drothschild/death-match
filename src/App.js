@@ -7,7 +7,7 @@ import Dany from './images/dany.png';
 
 class App extends Component {
   render() {
-    const { voteLeft, voteRight } = this.props
+    const { result, voteLeft, voteRight } = this.props
     return (
       <div className="App">
 	<h1>Death Match</h1>
@@ -16,11 +16,13 @@ class App extends Component {
 	    name="Jon Snow"
 	    photo={JonSnow}
 	    desc="He knows nothing"
+	    votes={result.A}
 	    onClick={voteLeft} />
 	  <Hero
 	    name="Dany"
 	    photo={Dany}
 	    desc="Bend the knee"
+	    votes={result.B}
 	    onClick={voteRight} />
 	</div>
       </div>

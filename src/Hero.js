@@ -15,6 +15,7 @@ export default class Hero extends React.Component {
 			<Card className="hero">
 				<CardHeader>
 					<h2>{this.props.name}</h2>
+					<h3>Total: {this.props.votes || 0}</h3>
 				</CardHeader>
 				<CardMedia>
 					<img src={this.props.photo} />
@@ -34,5 +35,6 @@ Hero.propTypes = {
 	name: PropTypes.string,
 	photo: PropTypes.string,
 	desc: PropTypes.string,
+	votes: PropTypes.number,
 	onClick: PropTypes.func,
 };
