@@ -6,32 +6,31 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const { count, increase, decrease } = this.props
+    const { result, voteLeft, voteRight } = this.props
+    const content = result || <div>Not vote yet</div>
     return (
       <div className="App">
         <div>
-          {count}
+          {content}
         </div>
-        <RaisedButton primary label='Increase' onClick={increase} />
-        <RaisedButton label='Decrease' onClick={decrease} />
+        <RaisedButton primary label='Left' onClick={voteLeft} />
+        <RaisedButton label='Right' onClick={voteRight} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {
-    count: state.counter
-  };
+  return state;
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    increase: id => {
-      dispatch({ type: 'INCREMENT' })
+    voteLeft: id => {
+      dispatch({ type: 'VOTE', payload: 'A' })
     },
-    decrease: id => {
-      dispatch({ type: 'DECREMENT' })
+    voteRight: id => {
+      dispatch({ type: 'VOTE', payload: 'B' })
     }
   };
 }
