@@ -18,7 +18,12 @@ export default class Hero extends React.Component {
 					<h3>Total: {this.props.votes || 0}</h3>
 				</CardHeader>
 				<CardMedia>
-					<img src={this.props.photo} />
+					<img
+					  style={{
+					    height: 150,
+					    backgroundSize: 'cover',
+					    backgroundImage: `url(${this.props.photo})`,
+					  }} />
 				</CardMedia>
 				<CardText>
 					<div>{this.props.desc}</div>
