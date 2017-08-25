@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
+import Hero from './Hero.js';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,10 @@ class App extends Component {
         </div>
         <RaisedButton primary label='Left' onClick={voteLeft} />
         <RaisedButton label='Right' onClick={voteRight} />
+	<div className="heroes">
+	  <Hero name="Jon Snow" photo="../images/jon-snow.jpg" desc="He knows nothing" />
+	  <Hero name="Dany" photo="../images/dany.jpg" desc="Bend the knee" />
+	</div>
       </div>
     );
   }

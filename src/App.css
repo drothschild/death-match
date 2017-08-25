@@ -22,3 +22,18 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.heroes {	
+  display: flex;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+}
+
+.hero {
+  width: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+}
