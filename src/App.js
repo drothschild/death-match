@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
   render() {
+    const { count, increase, decrease } = this.props
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div>
+          {count}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <button onClick={increase}>Increase</button>
+        <button onClick={decrease}>Decrease</button>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    count: state.counter
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    increase: id => {
+      dispatch({ type: 'INCREMENT' })
+    },
+    decrease: id => {
+      dispatch({ type: 'DECREMENT' })
+    }
+  };
+}
+
+
+export default connect(
+  mapStateToProps, mapDispatchToProps
+)(App);
