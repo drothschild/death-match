@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     const { result, voteLeft, voteRight } = this.props
     const content = Object.entries(result).map(([name, count]) => (
-      <div><span>{name}</span>: {count}</div>
+      <div key={name}><span>{name}</span>: {count}</div>
     ))
     return (
       <div className="App">
