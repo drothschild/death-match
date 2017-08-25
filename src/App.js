@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Hero from './Hero.js';
 import './App.css';
+import JonSnow from './images/jon-snow.png';
+import Dany from './images/dany.png';
 
 class App extends Component {
   render() {
@@ -12,12 +14,12 @@ class App extends Component {
 	<div className="heroes">
 	  <Hero
 	    name="Jon Snow"
-	    photo="../images/jon-snow.jpg"
+	    photo={JonSnow}
 	    desc="He knows nothing"
 	    onClick={voteLeft} />
 	  <Hero
 	    name="Dany"
-	    photo="../images/dany.jpg"
+	    photo={Dany}
 	    desc="Bend the knee"
 	    onClick={voteRight} />
 	</div>
