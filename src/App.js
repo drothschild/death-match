@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import './App.css';
@@ -7,7 +6,9 @@ import './App.css';
 class App extends Component {
   render() {
     const { result, voteLeft, voteRight } = this.props
-    const content = result || <div>Not vote yet</div>
+    const content = Object.entries(result).map(([name, count]) => (
+      <div><span>{name}</span>: {count}</div>
+    ))
     return (
       <div className="App">
         <div>
