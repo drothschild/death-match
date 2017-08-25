@@ -6,20 +6,21 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const { result, voteLeft, voteRight } = this.props
-    const content = Object.entries(result).map(([name, count]) => (
-      <div key={name}><span>{name}</span>: {count}</div>
-    ))
+    const { voteLeft, voteRight } = this.props
     return (
       <div className="App">
-        <div>
-          {content}
-        </div>
-        <RaisedButton primary label='Left' onClick={voteLeft} />
-        <RaisedButton label='Right' onClick={voteRight} />
+	<h1>Death Match</h1>
 	<div className="heroes">
-	  <Hero name="Jon Snow" photo="../images/jon-snow.jpg" desc="He knows nothing" />
-	  <Hero name="Dany" photo="../images/dany.jpg" desc="Bend the knee" />
+	  <Hero
+	    name="Jon Snow"
+	    photo="../images/jon-snow.jpg"
+	    desc="He knows nothing"
+	    onClick={voteLeft} />
+	  <Hero
+	    name="Dany"
+	    photo="../images/dany.jpg"
+	    desc="Bend the knee"
+	    onClick={voteRight} />
 	</div>
       </div>
     );
