@@ -1,5 +1,12 @@
 import React from 'react';
-import { Card, CardHeader, CardMedia, CardText } from 'material-ui';
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardText,
+  CardActions,
+  RaisedButton,
+} from 'material-ui';
 import PropTypes from 'prop-types';
 
 export default class Hero extends React.Component {
@@ -15,6 +22,9 @@ export default class Hero extends React.Component {
 				<CardText>
 					<div>{this.props.desc}</div>
 				</CardText>
+				<CardActions>
+					<RaisedButton onClick={this.props.onClick} label="Vote" />
+				</CardActions>
 			</Card>
 		);
 	}
@@ -24,4 +34,5 @@ Hero.propTypes = {
 	name: PropTypes.string,
 	photo: PropTypes.string,
 	desc: PropTypes.string,
+	onClick: PropTypes.func,
 };
