@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { connect } from 'react-redux';
+import RaisedButton from 'material-ui/RaisedButton';
 import './App.css';
 
 class App extends Component {
@@ -11,8 +12,8 @@ class App extends Component {
         <div>
           {count}
         </div>
-        <button onClick={increase}>Increase</button>
-        <button onClick={decrease}>Decrease</button>
+        <RaisedButton primary label='Increase' onClick={increase} />
+        <RaisedButton label='Decrease' onClick={decrease} />
       </div>
     );
   }
